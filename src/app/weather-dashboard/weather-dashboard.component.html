@@ -3,3 +3,56 @@
         <h1 style="color:aliceblue">Weather Dashboard</h1>        
     </div>
 </nav>
+
+<label class="col-sm-2 mt-3" style="padding-left: 30px;">
+    Country
+</label>
+<div class="col-sm-2" style="padding-left: 30px;">
+    <select name="Country" (change)="ChangeCountry($event)" class="form-control">
+        <option>----------Select----------</option>
+        <option [value]="country.id" *ngFor="let country of CountryList">
+            {{country.name}}
+        </option>
+    </select>
+</div>
+
+<label class="col-sm-2 mt-3" style="padding-left: 30px;">
+    City
+</label>
+<div class="col-sm-2" style="padding-left: 30px;">
+    <select name="City" (change)="ChangeCity($event)" class="form-control">
+        <option>----------Select----------</option>
+        <option [value]="city.id" *ngFor="let city of CityList">
+            {{city.cityName}}
+        </option>
+    </select>
+</div>
+
+<table class="table table-bordered" style="margin-top: 40px;">
+    <thead>
+        <th>City</th>
+        <th>Location</th>
+        <th>Time</th>
+        <th>Wind</th>
+        <th>Visibility</th>
+        <th>Sky Conditions</th>
+        <th>Temperature</th>
+        <th>Dew Point</th>
+        <th>Relative Humidity</th>
+        <th>Pressure</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of WeatherInfo">
+            <td>{{item.cityName}}</td>
+            <td>{{item.location}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.wind}}</td>
+            <td>{{item.visibility}}</td>
+            <td>{{item.skyCondition}}</td>
+            <td>{{item.temperature}}</td>
+            <td>{{item.dewPoint}}</td>
+            <td>{{item.relativeHumidity}}</td>
+            <td>{{item.pressure}}</td>
+        </tr>
+    </tbody>
+</table>
