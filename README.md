@@ -1,3 +1,10 @@
+# From Developer
+1. run the backend project first
+2. copy the backend url and paste in weather-api.service.ts (change this value => readonly weatherAPIUrl = "https://localhost:44398/api";)
+3. type npm start in Terminal inside Visual Code
+4. open the local url in your web browser (this project's port is 4200)
+
+if you find any difficulties feel free to contact me on fcnura@gmail.com, thank you
 # DashboardWeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
