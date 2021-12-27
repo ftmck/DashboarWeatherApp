@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherDashboardComponent } from './weather-dashboard/weather-dashboard.component';
 import { WeatherApiService } from './weather-api.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { WeatherApiService } from './weather-api.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [WeatherApiService],
+  providers: [WeatherApiService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

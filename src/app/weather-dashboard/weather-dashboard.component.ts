@@ -1,4 +1,5 @@
 import { animate } from '@angular/animations';
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WeatherApiService } from '../weather-api.service';
@@ -25,7 +26,7 @@ export class WeatherDashboardComponent implements OnInit {
     this.GetWeatherInfo();
   }
 
-  constructor(private service:WeatherApiService) { }
+  constructor(private service:WeatherApiService,private datepipe:DatePipe) { }
 
   ngOnInit(): void {
     this.service.getCountryList().subscribe((data:any) => {
@@ -45,7 +46,9 @@ export class WeatherDashboardComponent implements OnInit {
   GetWeatherInfo()
   {
     this.service.getWeatherInformation(this.cityId).subscribe((data:any) => {
+      // data.Time = this.datepipe.transform(new Date(),"dd-MM-yyyy");
       this.WeatherInfo.push(data);
+      // this.WeatherInfo.Time = this.datepipe.transform(new Date(),"dd-MM-yyyy");
       console.log('isi weather', data);
     })
   }
